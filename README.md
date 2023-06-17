@@ -1,5 +1,5 @@
 # simple-python-pyinstaller-app
-### repo untuk submission dicoding belajar implementasi CI/CD
+### Repo untuk submission dicoding belajar implementasi CI/CD
 #### Using scripted pipeline syntax
 This repository is for the
 [Build a Python app with PyInstaller](https://jenkins.io/doc/tutorials/build-a-python-app-with-pyinstaller/)

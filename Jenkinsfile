@@ -11,8 +11,9 @@ node {
             junit 'test-reports/results.xml'
         }
     }
-    stage('Manual Approval'){
+    stage('Manual Approval') {
         input 'Click the Proceed button to deploy the app'
+    }
     stage('Deploy') {
         def workspace = pwd()
         withEnv(["""VOLUME=$workspace/sources:/src""", 'IMAGE=cdrx/pyinstaller-linux:python2']) {

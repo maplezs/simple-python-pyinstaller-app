@@ -12,7 +12,7 @@ node {
         }
     }
     stage('Manual Approval') {
-        input 'Click the Proceed button to deploy the app'
+        input 'Lanjutkan ke tahap Deploy?'
     }
     stage('Deploy') {
         def workspace = pwd()

@@ -11,7 +11,9 @@ node {
             junit 'test-reports/results.xml'
         }
     }
-    stage('Deliver') {
+    stage('Manual Approval'){
+        input 'Click the Proceed button to deploy the app'
+    stage('Deploy') {
         def workspace = pwd()
         withEnv(["""VOLUME=$workspace/sources:/src""", 'IMAGE=cdrx/pyinstaller-linux:python2']) {
             dir(path: env.BUILD_ID) {
@@ -20,6 +22,7 @@ node {
             }
             archiveArtifacts artifacts: "sources/dist/add2vals"
             sh '''docker run --rm -v $VOLUME $IMAGE 'rm -rf build dist' '''
+            sleep time: 1, unit: 'MINUTES'
         }
     }
 }
